@@ -1,98 +1,327 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RiyaHub.lk - Vehicle Marketplace</title>
+<title>Riyamarket - Vehicle Marketplace</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f5f7fa;color:#172033}
-header{background:#0878d1;color:white;padding:14px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-size:27px;font-weight:800}
-nav a{color:white;text-decoration:none;margin:0 10px;font-size:15px}
-.post{background:#ffb400;color:#111;border:0;border-radius:7px;padding:11px 18px;font-weight:bold}
-.hero{background:linear-gradient(135deg,#0878d1,#0755a0);padding:55px 6% 70px;color:white;text-align:center}
-.hero h1{font-size:38px;margin-bottom:12px}
-.hero p{font-size:18px;margin-bottom:28px}
-.search{max-width:1000px;margin:auto;background:white;padding:14px;border-radius:10px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:9px}
-.search select,.search input{padding:14px;border:1px solid #ddd;border-radius:6px;background:white}
-.search button{background:#ff9f00;border:0;border-radius:6px;padding:0 24px;font-weight:bold}
-.container{max-width:1200px;margin:35px auto;padding:0 18px}
-h2{margin-bottom:18px}
-.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-.cat{background:white;border-radius:10px;padding:22px 10px;text-align:center;box-shadow:0 2px 8px #00000010;font-size:16px}
-.cat span{display:block;font-size:34px;margin-bottom:8px}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.card{background:white;border-radius:10px;overflow:hidden;box-shadow:0 2px 10px #00000012}
-.carimg{height:145px;background:#dfe8f1;display:flex;align-items:center;justify-content:center;font-size:65px}
-.cardbody{padding:15px}
-.card h3{font-size:17px;margin-bottom:8px}
-.price{color:#0878d1;font-size:19px;font-weight:bold;margin-bottom:7px}
-.meta{color:#687386;font-size:13px}
-.cta{margin-top:40px;background:white;border-radius:12px;padding:30px;text-align:center}
-.cta button{margin-top:15px;background:#0878d1;color:white;border:0;border-radius:7px;padding:13px 25px;font-weight:bold}
-footer{margin-top:40px;background:#172033;color:white;padding:28px 6%;text-align:center}
-@media(max-width:800px){
-nav{display:none}.hero h1{font-size:29px}
-.search{grid-template-columns:1fr 1fr}.search button{padding:13px}
-.categories{grid-template-columns:repeat(3,1fr)}
-.cards{grid-template-columns:repeat(2,1fr)}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
-@media(max-width:480px){
-.categories{grid-template-columns:repeat(2,1fr)}
-.cards{grid-template-columns:1fr}
+
+body{
+    background:#080808;
+    color:white;
+}
+
+header{
+    background:#0d0d0d;
+    border-bottom:1px solid #d4af37;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#d4af37;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:15px;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+.hero{
+    text-align:center;
+    padding:70px 20px;
+    background:linear-gradient(135deg,#050505,#17130a,#050505);
+}
+
+.hero h1{
+    font-size:45px;
+    color:#d4af37;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#ddd;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.search{
+    max-width:750px;
+    margin:auto;
+    background:#111;
+    padding:15px;
+    border:1px solid #d4af37;
+    border-radius:12px;
+    display:flex;
+    gap:10px;
+}
+
+.search input{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    background:#222;
+    color:white;
+    outline:none;
+}
+
+.search button,
+.post-btn{
+    background:#d4af37;
+    color:#000;
+    border:none;
+    padding:14px 22px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.section{
+    padding:45px 6%;
+}
+
+.section h2{
+    color:#d4af37;
+    margin-bottom:25px;
+    text-align:center;
+}
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.category{
+    background:#111;
+    border:1px solid #333;
+    padding:25px 10px;
+    text-align:center;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.category:hover{
+    border-color:#d4af37;
+    transform:translateY(-3px);
+}
+
+.category .icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.vehicles{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #333;
+    border-radius:12px;
+    padding:20px;
+}
+
+.card:hover{
+    border-color:#d4af37;
+}
+
+.car-image{
+    height:150px;
+    background:#222;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#d4af37;
+    margin-bottom:8px;
+}
+
+.price{
+    font-size:20px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.view-btn{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    padding:10px;
+    border:1px solid #d4af37;
+    border-radius:7px;
+    color:#d4af37;
+    text-decoration:none;
+}
+
+.cta{
+    text-align:center;
+    background:#111;
+    margin:20px 6% 50px;
+    padding:45px 20px;
+    border:1px solid #d4af37;
+    border-radius:15px;
+}
+
+.cta h2{
+    color:#d4af37;
+    margin-bottom:15px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    border-top:1px solid #333;
+    color:#aaa;
+}
+
+@media(max-width:700px){
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0 7px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .search{
+        flex-direction:column;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .vehicles{
+        grid-template-columns:1fr;
+    }
 }
 </style>
 </head>
+
 <body>
+
 <header>
-  <div class="logo">🚗 RiyaHub.lk</div>
-  <nav><a href="#">මුල් පිටුව</a><a href="#">වාහන</a><a href="#">වෙළඳ දැන්වීමක් දාන්න</a></nav>
-  <button class="post">+ දැන්වීමක් දාන්න</button>
+    <div class="logo">Riyamarket</div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Vehicles</a>
+        <a href="#">Login</a>
+    </nav>
 </header>
 
 <section class="hero">
-  <h1>ඔබේ ඊළඟ වාහනය මෙතැනින් හොයන්න</h1>
-  <p>ශ්‍රී ලංකාව පුරා Cars, Bikes, Vans සහ තවත් වාහන</p>
-  <div class="search">
-    <input placeholder="Toyota, Suzuki, Honda...">
-    <select><option>වාහන වර්ගය</option><option>Car</option><option>Bike</option><option>Van</option><option>Three Wheel</option><option>Truck</option></select>
-    <select><option>දිස්ත්‍රික්කය</option><option>Colombo</option><option>Kurunegala</option><option>Kandy</option><option>Gampaha</option><option>Galle</option></select>
-    <select><option>මිල පරාසය</option><option>රු. 1M ට අඩු</option><option>රු. 1M - 5M</option><option>රු. 5M - 10M</option><option>රු. 10M+</option></select>
-    <button>🔍 Search</button>
-  </div>
+    <h1>Find Your Next Vehicle</h1>
+    <p>Buy & Sell Vehicles Easily in Sri Lanka</p>
+
+    <div class="search">
+        <input type="text" placeholder="Search cars, bikes, vans...">
+        <button>Search</button>
+    </div>
 </section>
 
-<div class="container">
-  <h2>වාහන වර්ගය අනුව බලන්න</h2>
-  <div class="categories">
-    <div class="cat"><span>🚗</span>Cars</div>
-    <div class="cat"><span>🏍️</span>Motorbikes</div>
-    <div class="cat"><span>🚐</span>Vans</div>
-    <div class="cat"><span>🛺</span>Three Wheels</div>
-    <div class="cat"><span>🚚</span>Trucks</div>
-    <div class="cat"><span>🚌</span>Buses</div>
-  </div>
+<section class="section">
+    <h2>Browse Categories</h2>
+
+    <div class="categories">
+
+        <div class="category">
+            <div class="icon">🚗</div>
+            <b>Cars</b>
+        </div>
+
+        <div class="category">
+            <div class="icon">🏍️</div>
+            <b>Bikes</b>
+        </div>
+
+        <div class="category">
+            <div class="icon">🚐</div>
+            <b>Vans</b>
+        </div>
+
+        <div class="category">
+            <div class="icon">🛺</div>
+            <b>Three Wheelers</b>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2>Featured Vehicles</h2>
+
+    <div class="vehicles">
+
+        <div class="card">
+            <div class="car-image">🚗</div>
+            <h3>Premium Car</h3>
+            <p>Good condition • Colombo</p>
+            <div class="price">Rs. 5,500,000</div>
+            <a href="#" class="view-btn">View Details</a>
+        </div>
+
+        <div class="card">
+            <div class="car-image">🏍️</div>
+            <h3>Modern Bike</h3>
+            <p>Excellent condition • Kurunegala</p>
+            <div class="price">Rs. 850,000</div>
+            <a href="#" class="view-btn">View Details</a>
+        </div>
+
+        <div class="card">
+            <div class="car-image">🚐</div>
+            <h3>Family Van</h3>
+            <p>Well maintained • Kandy</p>
+            <div class="price">Rs. 8,900,000</div>
+            <a href="#" class="view-btn">View Details</a>
+        </div>
+
+    </div>
+</section>
+
+<div class="cta">
+    <h2>Want to Sell Your Vehicle?</h2>
+    <p style="margin-bottom:20px;">
+        Create an account and post your vehicle advertisement.
+    </p>
+    <button class="post-btn">Post Your Vehicle</button>
 </div>
 
-<div class="container">
-  <h2>⭐ Featured Vehicles</h2>
-  <div class="cards">
-    <div class="card"><div class="carimg">🚙</div><div class="cardbody"><h3>Toyota Vitz 2017</h3><div class="price">රු. 7,100,000</div><div class="meta">📍 Kurunegala · 120,000 km</div></div></div>
-    <div class="card"><div class="carimg">🚗</div><div class="cardbody"><h3>Suzuki Wagon R 2018</h3><div class="price">රු. 6,850,000</div><div class="meta">📍 Colombo · 98,000 km</div></div></div>
-    <div class="card"><div class="carimg">🏍️</div><div class="cardbody"><h3>Honda Hornet 2019</h3><div class="price">රු. 1,250,000</div><div class="meta">📍 Gampaha · 35,000 km</div></div></div>
-    <div class="card"><div class="carimg">🚐</div><div class="cardbody"><h3>Toyota KDH 2015</h3><div class="price">රු. 17,500,000</div><div class="meta">📍 Kandy · 158,000 km</div></div></div>
-  </div>
-</div>
+<footer>
+    © 2026 Riyamarket | Sri Lanka Vehicle Marketplace
+</footer>
 
-<div class="container">
-  <div class="cta">
-    <h2>ඔයාගේ වාහනය විකුණන්නද?</h2>
-    <p>වාහනයේ photos, details සහ price එක දාලා දැන්වීමක් පළ කරන්න.</p>
-    <button>+ දැන්වීමක් පළ කරන්න</button>
-  </div>
-</div>
-
-<footer>© 2026 RiyaHub.lk · Buy & Sell Vehicles in Sri Lanka</footer>
 </body>
 </html>
